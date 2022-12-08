@@ -3,7 +3,7 @@
 Project: Bring English to [x-ui](https://github.com/vaxilu/x-ui)
 - [x] Introduction (English)
 - [x] Support multi-users on the same port :tada:
-- [ ] Translate web interface to English
+- [x] Translate web interface to English
 
 ## What is x-ui
 
@@ -84,9 +84,9 @@ Instructions:
 
 Reference syntax:
 
-- . * * * * * // At every minute
+- * * * * *// At every minute
 - */10 * * * * // At every 10th minute.
-- 30 * * * * // At minute 30 (recommended)
+- 30 * * * * // At minute 30 (**recommended**)
 - @hourly // At minute 0
 - @daily // At 00:00
 - @every 8h // At minute 0 past every 8th hour
@@ -98,7 +98,11 @@ Notification content:
 - Traffic warning reminder
 
 Change time zone (to get correctly time in your country):
-
 ```
-vietnam -> ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+ln -sf /usr/share/zoneinfo/{**Your time zone**} /etc/localtime
+```
+
+Ex: vietnam
+```
+ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 ```
