@@ -84,12 +84,12 @@ Instructions:
 
 Reference syntax:
 
-- * * * * *// At every minute
-- */10 * * * * // At every 10th minute.
-- 30 * * * * // At minute 30 (**recommended**)
-- @hourly // At minute 0
-- @daily // At 00:00
-- @every 8h // At minute 0 past every 8th hour
+> * * * * * // At every minute
+> */10 * * * * // At every 10th minute.
+> 30 * * * * // At minute 30 (**recommended**)
+> @hourly // At minute 0
+> @daily // At 00:00
+> @every 8h // At minute 0 past every 8th hour
 
 Notification content:
 - Node traffic usage
@@ -99,7 +99,7 @@ Notification content:
 
 Change time zone (to get correctly time in your country):
 ```
-ln -sf /usr/share/zoneinfo/{**Your time zone**} /etc/localtime
+ln -sf /usr/share/zoneinfo/{Your time zone} /etc/localtime
 ```
 
 Ex: vietnam
