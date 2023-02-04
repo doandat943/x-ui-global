@@ -1,12 +1,12 @@
 {{define "inboundInfoStream"}}
-<p>传输: <a-tag color="green">[[ inbound.network ]]</a-tag></p>
+<p>transport: <a-tag color="green">[[ inbound.network ]]</a-tag></p>
 
 <template v-if="inbound.isTcp || inbound.isWs || inbound.isH2">
     <p v-if="inbound.host">host: <a-tag color="green">[[ inbound.host ]]</a-tag></p>
-    <p v-else>host: <a-tag color="orange">无</a-tag></p>
+    <p v-else>host: <a-tag color="orange">none</a-tag></p>
 
     <p v-if="inbound.path">path: <a-tag color="green">[[ inbound.path ]]</a-tag></p>
-    <p v-else>path: <a-tag color="orange">无</a-tag></p>
+    <p v-else>path: <a-tag color="orange">none</a-tag></p>
 </template>
 
 <template v-if="inbound.isQuic">
@@ -25,31 +25,31 @@
 </template>
 
 <template v-if="inbound.tls || inbound.xtls">
-    <p v-if="inbound.tls">tls: <a-tag color="green">开启</a-tag></p>
-    <p v-if="inbound.xtls">xtls: <a-tag color="green">开启</a-tag></p>
+    <p v-if="inbound.tls">tls: <a-tag color="green">on</a-tag></p>
+    <p v-if="inbound.xtls">xtls: <a-tag color="green">on</a-tag></p>
 </template>
 <template v-else>
-    <p>tls: <a-tag color="red">关闭</a-tag></p>
+    <p>tls: <a-tag color="red">off</a-tag></p>
 </template>
 <p v-if="inbound.tls">
-    tls域名: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "无" ]]</a-tag>
+    tls domain: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "none" ]]</a-tag>
 </p>
 <p v-if="inbound.xtls">
-    xtls域名: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "无" ]]</a-tag>
+    xtls domain: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "none" ]]</a-tag>
 </p>
 {{end}}
 
 
 {{define "component/inboundInfoComponent"}}
 <div>
-    <p>协议: <a-tag color="green">[[ dbInbound.protocol ]]</a-tag></p>
-    <p>地址: <a-tag color="blue">[[ dbInbound.address ]]</a-tag></p>
-    <p>端口: <a-tag color="green">[[ dbInbound.port ]]</a-tag></p>
+    <p>protocol: <a-tag color="green">[[ dbInbound.protocol ]]</a-tag></p>
+    <p>address: <a-tag color="blue">[[ dbInbound.address ]]</a-tag></p>
+    <p>port: <a-tag color="green">[[ dbInbound.port ]]</a-tag></p>
 
     <template v-if="dbInbound.isVMess">
         <p>uuid: <a-tag color="green">[[ inbound.uuid ]]</a-tag></p>
         <p>email: <a-tag color="green">[[ inbound.email ]]</a-tag></p>
-        <p>alterId: <a-tag color="green">[[ inbound.alterId ]]</a-tag></p>
+        <p>alterID: <a-tag color="green">[[ inbound.alterId ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isVLess">

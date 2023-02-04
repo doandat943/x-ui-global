@@ -72,7 +72,7 @@ func (s *InboundService) AddInbound(inbound *model.Inbound) error {
 		return err
 	}
 	if exist {
-		return common.NewError("端口已存在，使用相同端口时请确保该端口所使用的协议一致，且确保使用的id与邮箱都不重复:", inbound.Port)
+		return common.NewError("the port already exists. (note: when using the same port, please ensure that the protocol used by the port is consistent, and the id and mailbox used are not duplicate:", inbound.Port)
 	}
 	db := database.GetDB()
 	return db.Save(inbound).Error
@@ -85,7 +85,7 @@ func (s *InboundService) AddInbounds(inbounds []*model.Inbound) error {
 			return err
 		}
 		if exist {
-			return common.NewError("端口已存在，使用相同端口时请确保该端口所使用的协议一致，且确保使用的id与邮箱都不重复:", inbound.Port)
+			return common.NewError("the port already exists. (note: when using the same port, please ensure that the protocol used by the port is consistent, and the id and mailbox used are not duplicate:", inbound.Port)
 		}
 	}
 
@@ -131,7 +131,7 @@ func (s *InboundService) UpdateInbound(inbound *model.Inbound) error {
 		return err
 	}
 	if exist {
-		return common.NewError("端口已存在，使用相同端口时请确保该端口所使用的协议一致，且确保使用的id与邮箱都不重复:", inbound.Port)
+		return common.NewError("the port already exists. (note: when using the same port, please ensure that the protocol used by the port is consistent, and the id and mailbox used are not duplicate:", inbound.Port)
 	}
 
 	oldInbound, err := s.GetInbound(inbound.Id)

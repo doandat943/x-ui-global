@@ -1,8 +1,8 @@
 {{define "inboundInfoModal"}}
 {{template "component/inboundInfo"}}
-<a-modal id="inbound-info-modal" v-model="infoModal.visible" title="详细信息" @ok="infoModal.ok"
+<a-modal id="inbound-info-modal" v-model="infoModal.visible" title="details" @ok="infoModal.ok"
          :closable="true" :mask-closable="true"
-         ok-text="复制链接" cancel-text='{{ i18n "close" }}' :ok-button-props="infoModal.okBtnPros">
+         ok-text="copy" cancel-text='{{ i18n "close" }}' :ok-button-props="infoModal.okBtnPros">
     <inbound-info :db-inbound="dbInbound" :inbound="inbound"></inbound-info>
 </a-modal>
 <script>
@@ -36,7 +36,7 @@
                     this.clipboard = new ClipboardJS(`#${this.okBtnPros.attrs.id}`, {
                         text: () => link,
                     });
-                    this.clipboard.on('success', () => app.$message.success('复制成功'));
+                    this.clipboard.on('success', () => app.$message.success('copied'));
                 });
             }
         },
