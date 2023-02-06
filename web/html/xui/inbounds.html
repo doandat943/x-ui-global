@@ -46,7 +46,7 @@
                         <div slot="title">
                             <a-button type="primary" icon="plus" @click="openAddInbound"></a-button>
                         </div>
-<!--                        <a-input v-model="searchKey" placeholder="搜索" autofocus style="max-width: 300px"></a-input>-->
+<!--                        <a-input v-model="searchKey" placeholder="搜索" autofocus style="max-width: 400px"></a-input>-->
                         <a-table :columns="columns" :row-key="dbInbound => dbInbound.id"
                                  :data-source="dbInbounds"
                                  :loading="spinning" :scroll="{ x: 1500 }"
@@ -123,7 +123,7 @@
     const columns = [{
         title: "manage",
         align: 'center',
-        width: 30,
+        width: 40,
         scopedSlots: { customRender: 'action' },
     }, {
         title: "enable",
@@ -134,7 +134,7 @@
         title: "id",
         align: 'center',
         dataIndex: "id",
-        width: 30,
+        width: 40,
     }, {
         title: "remark",
         align: 'center',
@@ -153,7 +153,7 @@
     }, {
         title: "traffic ↑|↓",
         align: 'center',
-        width: 150,
+        width: 140,
         scopedSlots: { customRender: 'traffic' },
     }, {
         title: "details",

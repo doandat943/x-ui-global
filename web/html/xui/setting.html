@@ -40,7 +40,7 @@
                             <a-list item-layout="horizontal" style="background: white">
                                 <setting-list-item type="text" title="panel ip" desc="leave blank by default" v-model="allSetting.webListen"></setting-list-item>
                                 <setting-list-item type="number" title="panel port" desc="default port = 54321" v-model.number="allSetting.webPort"></setting-list-item>
-                                <setting-list-item type="text" title="panel certificate public key (file path)" desc="privkey.pem" v-model="allSetting.webCertFile"></setting-list-item>
+                                <setting-list-item type="text" title="panel certificate public key (file path)" desc="fullchain.pem/chain.pem" v-model="allSetting.webCertFile"></setting-list-item>
                                 <setting-list-item type="text" title="panel certificate private key (file path)" desc="privkey.pem" v-model="allSetting.webKeyFile"></setting-list-item>
                                 <setting-list-item type="text" title="panel url root path" desc="must start with '/' and end with '/'" v-model="allSetting.webBasePath"></setting-list-item>
                             </a-list>
